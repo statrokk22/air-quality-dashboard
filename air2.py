@@ -1,7 +1,17 @@
 import streamlit as st
 import requests
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 import platform
+
+plt.rcParams['axes.unicode_minus'] = False
+
+if platform.system() == 'Linux':
+    plt.rc('font', family='NanumGothic')  # Streamlit Cloud 기준
+elif platform.system() == 'Windows':
+    plt.rc('font', family='NanumGothic')
+elif platform.system() == 'Darwin':
+    plt.rc('font', family='NanumGothic')
 
 # ===== 스타일 설정 =====
 st.set_page_config(page_title="아름동 대기질", page_icon="🌫️")
